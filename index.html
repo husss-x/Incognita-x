@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SolarEx - Ricevi preventivi gratuiti per impianti fotovoltaici. Confronta le offerte dei migliori installatori e risparmia in bolletta." />
+  <meta name="keywords" content="fotovoltaico, pannelli solari, energia solare, preventivo fotovoltaico, risparmio energetico" />
+  <meta property="og:title" content="SolarEx - Preventivi Fotovoltaico Gratuiti" />
+  <meta property="og:description" content="Confronta le offerte dei migliori installatori fotovoltaici in Italia. Gratis, senza impegno." />
+  <meta property="og:type" content="website" />
+  <title>SolarEx - Preventivi Fotovoltaico Gratuiti | Risparmia in Bolletta</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>" />
+</head>
+<body>
+
+  <!-- =========================================
+       NAVBAR
+  ========================================= -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigazione principale">
+      <a href="#" class="nav-logo" aria-label="SolarEx - Home">
+        <div class="logo-icon">☀️</div>
+        <span>Solar<em>Ex</em></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#privati">Privati</a></li>
+        <li><a href="#aziende">Aziende</a></li>
+        <li><a href="#agricolo">Fotovoltaico Agricolo</a></li>
+        <li><a href="#blog">Guide &amp; News</a></li>
+        <li class="nav-cta"><a href="#hero-form">Sei un Installatore? →</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="#privati">Privati</a></li>
+        <li><a href="#aziende">Aziende</a></li>
+        <li><a href="#agricolo">Fotovoltaico Agricolo</a></li>
+        <li><a href="#calculator">Calcola il risparmio</a></li>
+        <li><a href="#blog">Guide &amp; News</a></li>
+        <li><a href="#hero-form">Sei un Installatore?</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =========================================
+       HERO SECTION
+  ========================================= -->
+  <section class="hero" id="hero" aria-label="Richiedi preventivo fotovoltaico">
+    <div class="hero-container">
+
+      <!-- LEFT: copy -->
+      <div class="hero-content">
+        <h1>
+          Ricevi preventivi gratuiti per il
+          <span>Fotovoltaico</span>
+          della tua casa o azienda
+        </h1>
+        <p>
+          Confronta le offerte dei migliori installatori certificati in Italia.
+          Servizio completamente gratuito, senza vincoli.
+        </p>
+        <div class="hero-badges">
+          <div class="badge"><span class="badge-icon">✅</span> 100% Gratuito</div>
+          <div class="badge"><span class="badge-icon">⚡</span> Risposta in 24h</div>
+          <div class="badge"><span class="badge-icon">🔒</span> Dati protetti</div>
+          <div class="badge"><span class="badge-icon">🏆</span> Installatori certificati</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="hero-form" id="hero-form" role="form" aria-label="Modulo richiesta preventivo">
+        <h2>Richiedi il tuo preventivo</h2>
+        <p class="form-subtitle">Compila in 2 minuti — è gratis e senza impegno</p>
+
+        <!-- Progress Bar -->
+        <div style="background:#f0f0f0; border-radius:4px; height:4px; margin-bottom:24px;">
+          <div id="progress-bar" style="background:#171775; height:4px; border-radius:4px; width:0%;"></div>
+        </div>
+
+        <form id="hero-form" novalidate>
+
+          <!-- STEP 1: Tipo immobile -->
+          <div class="form-step">
+            <div class="form-group">
+              <label for="tipo-immobile">Tipo di immobile</label>
+              <select id="tipo-immobile" name="tipo-immobile" required>
+                <option value="">-- Seleziona --</option>
+                <option value="casa">Casa privata</option>
+                <option value="azienda">Azienda / Capannone</option>
+                <option value="condominio">Condominio</option>
+                <option value="agricolo">Terreno agricolo</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="superficie-tetto">Superficie del tetto (mq)</label>
+              <select id="superficie-tetto" name="superficie-tetto" required>
+                <option value="">-- Seleziona --</option>
+                <option value="30">Fino a 30 mq</option>
+                <option value="50">30 – 50 mq</option>
+                <option value="100">50 – 100 mq</option>
+                <option value="200">100 – 200 mq</option>
+                <option value="500">Oltre 200 mq</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bolletta">Spesa media mensile in bolletta (€)</label>
+              <select id="bolletta" name="bolletta" required>
+                <option value="">-- Seleziona --</option>
+                <option value="50">Meno di €50</option>
+                <option value="100">€50 – €100</option>
+                <option value="200">€100 – €200</option>
+                <option value="500">€200 – €500</option>
+                <option value="1000">Più di €500</option>
+              </select>
+            </div>
+            <button type="button" class="btn-primary btn-next">Continua →</button>
+          </div>
+
+          <!-- STEP 2: Dati personali -->
+          <div class="form-step" style="display:none;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Mario" required />
+              </div>
+              <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Rossi" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="mario.rossi@email.it" required />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+39 333 1234567" required />
+            </div>
+            <div class="form-group">
+              <label for="cap">CAP / Città</label>
+              <input type="text" id="cap" name="cap" placeholder="Es. 20121 Milano" required />
+            </div>
+            <button type="submit" class="btn-primary" id="form-submit">
+              🌞 Ricevi i preventivi gratuiti
+            </button>
+          </div>
+
+        </form>
+
+        <p class="form-privacy">
+          Inviando accetti la nostra <a href="#">Privacy Policy</a>.
+          I tuoi dati non saranno mai ceduti a terzi.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       STATISTICS STRIP
+  ========================================= -->
+  <section class="stats" aria-label="I numeri di SolarEx">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <span class="stat-num" data-count="48000" data-suffix="+">0</span>
+        <span class="stat-label">Preventivi inviati</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-num" data-count="1200" data-suffix="+">0</span>
+        <span class="stat-label">Installatori partner</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-num" data-count="98" data-suffix="%">0</span>
+        <span class="stat-label">Clienti soddisfatti</span>
+      </div>
+      <div class="stat-item fade-in">
+        <span class="stat-num" data-count="850" data-suffix="€">0</span>
+        <span class="stat-label">Risparmio medio annuo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       HOW IT WORKS
+  ========================================= -->
+  <section class="section" id="privati" aria-labelledby="how-title">
+    <div class="section-header fade-in">
+      <span class="section-label">Come funziona</span>
+      <h2 id="how-title">Ottieni il tuo impianto fotovoltaico in 3 semplici passi</h2>
+      <p>Un processo semplice, veloce e completamente gratuito per trovare la soluzione migliore per te</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-num">1</div>
+        <h3>Compila il modulo</h3>
+        <p>Inserisci poche informazioni sulla tua abitazione e le tue esigenze energetiche in soli 2 minuti.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">2</div>
+        <h3>Confronta le offerte</h3>
+        <p>Ricevi fino a 5 preventivi personalizzati da installatori certificati nella tua zona.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">3</div>
+        <h3>Scegli liberamente</h3>
+        <p>Seleziona l'offerta migliore senza alcun vincolo. Il servizio è sempre gratuito.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       BENEFITS
+  ========================================= -->
+  <section class="section benefits" id="aziende" aria-labelledby="benefits-title">
+    <div class="section-header fade-in">
+      <span class="section-label">Perché SolarEx</span>
+      <h2 id="benefits-title">I vantaggi di scegliere il fotovoltaico con noi</h2>
+      <p>Ti guidiamo in ogni fase del percorso verso l'indipendenza energetica</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">⚡</div>
+        <h3>Risposta rapida</h3>
+        <p>Entro 24 ore ricevi i preventivi degli installatori selezionati nella tua zona, pronti a competere per offrirti il prezzo migliore.</p>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">💰</div>
+        <h3>Sempre gratuito</h3>
+        <p>Il servizio di confronto è completamente gratuito per l'utente finale. Non ci sono costi nascosti né commissioni da pagare.</p>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">🏅</div>
+        <h3>Installatori certificati</h3>
+        <p>Lavoriamo solo con installatori verificati e certificati MCS, con esperienza comprovata e assicurazione professionale.</p>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">📊</div>
+        <h3>Confronto trasparente</h3>
+        <p>Visualizza e confronta le offerte in modo chiaro e dettagliato: kWp installati, garanzie, tempi di payback e risparmio stimato.</p>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">🔋</div>
+        <h3>Soluzioni complete</h3>
+        <p>Dal fotovoltaico alle batterie di accumulo, dalla pompa di calore ai punti di ricarica auto elettrica. Un'unica piattaforma.</p>
+      </div>
+      <div class="benefit-card fade-in">
+        <div class="benefit-icon">🛡️</div>
+        <h3>Dati al sicuro</h3>
+        <p>I tuoi dati sono protetti secondo il GDPR. Non li vendiamo mai a terze parti e puoi richiederne la cancellazione in qualsiasi momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       SAVINGS CALCULATOR
+  ========================================= -->
+  <section class="section calculator" id="calculator" aria-labelledby="calc-title">
+    <div class="section-header fade-in">
+      <span class="section-label">Calcola il risparmio</span>
+      <h2 id="calc-title">Quanto puoi risparmiare con il fotovoltaico?</h2>
+      <p>Inserisci i tuoi dati e scopri il potenziale risparmio annuo stimato</p>
+    </div>
+
+    <div class="calc-container fade-in">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Bolletta mensile media</label>
+          <input type="range" id="bill-range" min="30" max="800" value="150" step="10" aria-label="Bolletta mensile" />
+          <div class="range-value">
+            <span id="bill-val">€150</span>
+            <small>€30 – €800</small>
+          </div>
+        </div>
+        <div class="calc-field">
+          <label>Superficie disponibile sul tetto</label>
+          <input type="range" id="roof-range" min="10" max="300" value="60" step="5" aria-label="Superficie tetto" />
+          <div class="range-value">
+            <span id="roof-val">60 mq</span>
+            <small>10 – 300 mq</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result-item">
+          <span class="result-value" id="sav-year">–</span>
+          <span class="result-label">Risparmio annuo stimato</span>
+        </div>
+        <div class="calc-result-item">
+          <span class="result-value" id="sav-month">–</span>
+          <span class="result-label">Risparmio mensile</span>
+        </div>
+        <div class="calc-result-item">
+          <span class="result-value" id="payback">–</span>
+          <span class="result-label">Tempo di ritorno</span>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:32px;">
+        <a href="#hero-form" class="btn-green">Ricevi il preventivo personalizzato →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       AGRICULTURAL SECTION
+  ========================================= -->
+  <section class="section" id="agricolo" aria-labelledby="agri-title">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;">
+      <div class="fade-in">
+        <span class="section-label">Fotovoltaico Agricolo</span>
+        <h2 id="agri-title" style="font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:var(--primary); margin:14px 0;">
+          Trasforma il tuo terreno in una fonte di reddito
+        </h2>
+        <p style="color:var(--text-gray); margin-bottom:20px; line-height:1.7;">
+          Il fotovoltaico agricolo (agrivoltaico) permette agli agricoltori di produrre energia
+          elettrica mantenendo le attività agricole. Accedi agli incentivi GSE e massimizza
+          il rendimento dei tuoi terreni.
+        </p>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
+          <li style="display:flex; gap:10px; color:var(--text-gray);">
+            <span style="color:var(--accent-green); font-weight:900;">✓</span>
+            Incentivi Conto Energia e GSE
+          </li>
+          <li style="display:flex; gap:10px; color:var(--text-gray);">
+            <span style="color:var(--accent-green); font-weight:900;">✓</span>
+            Compatibile con le attività agricole
+          </li>
+          <li style="display:flex; gap:10px; color:var(--text-gray);">
+            <span style="color:var(--accent-green); font-weight:900;">✓</span>
+            Reddito integrativo garantito per 20 anni
+          </li>
+          <li style="display:flex; gap:10px; color:var(--text-gray);">
+            <span style="color:var(--accent-green); font-weight:900;">✓</span>
+            Installazione su capannoni e terreni
+          </li>
+        </ul>
+        <a href="#hero-form" class="btn-green" style="display:inline-block; padding:14px 32px; background:var(--primary); color:white; border-radius:10px; font-weight:700;">
+          Scopri le opportunità →
+        </a>
+      </div>
+
+      <div class="fade-in" style="background:var(--bg-light); border-radius:20px; padding:40px; text-align:center;">
+        <div style="font-size:5rem; margin-bottom:16px;">🌾</div>
+        <div style="font-size:3rem; font-weight:900; color:var(--primary); margin-bottom:8px;">+€18.000</div>
+        <p style="color:var(--text-gray); font-size:0.95rem;">Reddito medio annuo generabile con 1 ettaro agrivoltaico</p>
+        <hr style="border:none; border-top:1px solid #dde1f0; margin:24px 0;" />
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; text-align:center;">
+          <div>
+            <div style="font-size:1.8rem; font-weight:900; color:var(--primary);">20</div>
+            <div style="font-size:0.85rem; color:var(--text-gray);">Anni di incentivo</div>
+          </div>
+          <div>
+            <div style="font-size:1.8rem; font-weight:900; color:var(--primary);">0€</div>
+            <div style="font-size:0.85rem; color:var(--text-gray);">Costo preventivo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       TRUST / AWARDS
+  ========================================= -->
+  <section class="trust" aria-label="Riconoscimenti e media">
+    <h2>Riconosciuti da</h2>
+    <div class="trust-logos">
+      <span class="trust-logo-item">Il Sole 24 Ore</span>
+      <span class="trust-logo-item">Financial Times</span>
+      <span class="trust-logo-item">Repubblica</span>
+      <span class="trust-logo-item">Corriere della Sera</span>
+      <span class="trust-logo-item">Forbes Italia</span>
+    </div>
+  </section>
+
+  <!-- =========================================
+       REGIONS
+  ========================================= -->
+  <section class="section regions" aria-labelledby="regions-title">
+    <div class="section-header fade-in">
+      <span class="section-label">Copertura nazionale</span>
+      <h2 id="regions-title">Installatori fotovoltaici in tutta Italia</h2>
+      <p>Trova gli installatori certificati nella tua regione</p>
+    </div>
+
+    <div class="regions-grid">
+      <button class="region-pill">Lombardia</button>
+      <button class="region-pill">Veneto</button>
+      <button class="region-pill">Piemonte</button>
+      <button class="region-pill">Emilia-Romagna</button>
+      <button class="region-pill">Toscana</button>
+      <button class="region-pill">Lazio</button>
+      <button class="region-pill">Campania</button>
+      <button class="region-pill">Sicilia</button>
+      <button class="region-pill">Puglia</button>
+      <button class="region-pill">Sardegna</button>
+      <button class="region-pill">Calabria</button>
+      <button class="region-pill">Liguria</button>
+      <button class="region-pill">Marche</button>
+      <button class="region-pill">Abruzzo</button>
+      <button class="region-pill">Friuli-V.G.</button>
+      <button class="region-pill">Trentino-A.A.</button>
+      <button class="region-pill">Umbria</button>
+      <button class="region-pill">Basilicata</button>
+      <button class="region-pill">Molise</button>
+      <button class="region-pill">Valle d'Aosta</button>
+    </div>
+  </section>
+
+  <!-- =========================================
+       BLOG / GUIDE
+  ========================================= -->
+  <section class="section" id="blog" aria-labelledby="blog-title">
+    <div class="section-header fade-in">
+      <span class="section-label">Guide &amp; News</span>
+      <h2 id="blog-title">Tutto quello che devi sapere sul fotovoltaico</h2>
+      <p>Articoli aggiornati su incentivi, tecnologie e consigli pratici</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <article class="blog-card fade-in">
+        <div class="blog-thumb">
+          <div class="blog-thumb-img" style="background:linear-gradient(135deg,#0d0d5e,#252595);">
+            ☀️
+          </div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Incentivi 2025</span>
+          <h3>Superbonus e Conto Energia: tutte le agevolazioni disponibili nel 2025</h3>
+          <p>Guida completa agli incentivi statali per l'installazione di impianti fotovoltaici. Scopri come risparmiare fino al 50%.</p>
+          <div class="blog-meta">
+            <span>📅 15 Gen 2025</span>
+            <span>📖 5 min di lettura</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card fade-in">
+        <div class="blog-thumb">
+          <div class="blog-thumb-img" style="background:linear-gradient(135deg,#1a5e1a,#2e9e2e);">
+            🔋
+          </div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Tecnologia</span>
+          <h3>Batterie di accumulo per fotovoltaico: vale davvero la pena?</h3>
+          <p>Analisi costi-benefici delle principali batterie di accumulo disponibili sul mercato italiano nel 2025.</p>
+          <div class="blog-meta">
+            <span>📅 10 Gen 2025</span>
+            <span>📖 7 min di lettura</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card fade-in">
+        <div class="blog-thumb">
+          <div class="blog-thumb-img" style="background:linear-gradient(135deg,#5e3a00,#c07a00);">
+            🏠
+          </div>
+        </div>
+        <div class="blog-body">
+          <span class="blog-tag">Guida all'acquisto</span>
+          <h3>Quanto costa un impianto fotovoltaico da 6 kWp nel 2025?</h3>
+          <p>Analisi dettagliata dei prezzi di mercato, con confronto tra diverse marche e configurazioni di pannelli solari.</p>
+          <div class="blog-meta">
+            <span>📅 3 Gen 2025</span>
+            <span>📖 8 min di lettura</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="#" class="btn-green" style="display:inline-block; padding:14px 36px; background:var(--primary); color:white; border-radius:10px; font-weight:700; transition:0.3s;">
+        Leggi tutti gli articoli →
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CTA BANNER
+  ========================================= -->
+  <section class="cta-banner" aria-label="Call to action - richiedi preventivo">
+    <h2>Pronto a risparmiare in bolletta?</h2>
+    <p>Oltre 48.000 italiani hanno già scelto il fotovoltaico grazie a SolarEx. Unisciti a loro oggi.</p>
+    <a href="#hero-form" class="btn-green">Richiedi preventivo gratuito →</a>
+    <a href="#calculator" class="btn-outline-white">Calcola il risparmio</a>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">Solar<em>Ex</em></div>
+        <p>
+          La piattaforma leader in Italia per trovare il miglior installatore fotovoltaico.
+          Confronta preventivi, risparmia energia e contribuisci a un futuro sostenibile.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Soluzioni</h4>
+        <ul>
+          <li><a href="#privati">Fotovoltaico Casa</a></li>
+          <li><a href="#aziende">Fotovoltaico Aziende</a></li>
+          <li><a href="#agricolo">Agrivoltaico</a></li>
+          <li><a href="#">Batterie di Accumulo</a></li>
+          <li><a href="#">Colonnine Ricarica</a></li>
+          <li><a href="#">Pompe di Calore</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Risorse</h4>
+        <ul>
+          <li><a href="#blog">Guide Fotovoltaico</a></li>
+          <li><a href="#">Incentivi 2025</a></li>
+          <li><a href="#calculator">Calcolatore Risparmio</a></li>
+          <li><a href="#">Glossario Solare</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Azienda</h4>
+        <ul>
+          <li><a href="#">Chi Siamo</a></li>
+          <li><a href="#">Come Funziona</a></li>
+          <li><a href="#">Diventa Partner</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Lavora con Noi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 SolarEx S.r.l. — P.IVA 12345678901 — Tutti i diritti riservati</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Termini di Servizio</a>
+        <a href="#">Note Legali</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       COOKIE BANNER
+  ========================================= -->
+  <div class="cookie-banner" id="cookie-banner" role="alertdialog" aria-label="Banner cookie">
+    <p>
+      Utilizziamo cookie tecnici e, previo consenso, cookie di profilazione per migliorare l'esperienza di navigazione.
+      Leggi la nostra <a href="#">Cookie Policy</a> per saperne di più.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn-cookie btn-cookie-decline" id="cookie-decline">Rifiuta</button>
+      <button class="btn-cookie btn-cookie-accept" id="cookie-accept">Accetta tutti</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- SCROLL TOP -->
+  <button class="scroll-top" id="scroll-top" aria-label="Torna in cima">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
